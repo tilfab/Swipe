@@ -147,7 +147,9 @@ function Swipe(container, options) {
     }
 
     index = to;
-    offloadFn(options.callback && options.callback(index, slides[index], direction));
+
+    //set direction -1 = left and 1 = right
+    offloadFn(options.callback && options.callback(index, slides[index], -direction));
   }
 
   function move(index, dist, speed) {
@@ -395,6 +397,7 @@ function Swipe(container, options) {
 
           }
 
+          //set direction -1 = left and 1 = right
           var callbackDirection = (direction) ? 1 : -1;
           options.callback && options.callback(index, slides[index], callbackDirection);
 
