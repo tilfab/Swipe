@@ -69,7 +69,7 @@ window.mySwipe = new Swipe(document.getElementById('slider'), {
   continuous: true,
   disableScroll: false,
   stopPropagation: false,
-  callback: function(index, elem) {},
+  callback: function(index, elem, direction) {},
   transitionEnd: function(index, elem) {}
 });
 
