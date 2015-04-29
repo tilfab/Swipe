@@ -147,7 +147,7 @@ function Swipe(container, options) {
     }
 
     index = to;
-    offloadFn(options.callback && options.callback(index, slides[index]));
+    offloadFn(options.callback && options.callback(index, slides[index], direction));
   }
 
   function move(index, dist, speed) {
@@ -395,7 +395,8 @@ function Swipe(container, options) {
 
           }
 
-          options.callback && options.callback(index, slides[index]);
+          var callbackDirection = (direction) ? 1 : -1;
+          options.callback && options.callback(index, slides[index], callbackDirection);
 
         } else {
 
