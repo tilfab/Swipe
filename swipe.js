@@ -9,10 +9,7 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = factory();
   } else {
-    root.ReactSwipe = factory(
-      root.React,
-      root.Swipe
-    );
+    root.Swipe = factory();
   }
 })(this, function () {
   function Swipe(container, options) {
